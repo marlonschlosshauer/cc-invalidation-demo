@@ -1,4 +1,5 @@
 import { revalidatePath, revalidateTag } from "next/cache";
+import { Button } from "./Button";
 
 const nukeBlog = async () => {
   "use server";
@@ -8,9 +9,11 @@ const nukeBlog = async () => {
 export const InvalidateBlog = () => {
   return (
     <form action={nukeBlog}>
-      <button>
-        Revalidate <code>/blog</code>
-      </button>
+      <Button>
+        <p>
+          Revalidate <code>/blog</code>
+        </p>
+      </Button>
     </form>
   );
 };
@@ -23,7 +26,9 @@ const nukePosts = async () => {
 export const InvalidatePosts = () => {
   return (
     <form action={nukePosts}>
-      <button>Revalidate Posts</button>
+      <Button>
+        <p>Revalidate Posts</p>
+      </Button>
     </form>
   );
 };
