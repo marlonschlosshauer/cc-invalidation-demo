@@ -7,8 +7,6 @@ export const Posts = async () => {
     <ul>
       {posts.map((post, key) => (
         <li key={key}>
-          <span>id: {post.id}</span>
-          {" | "}
           <span>date: {post.date}</span>
         </li>
       ))}

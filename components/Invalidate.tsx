@@ -1,14 +1,29 @@
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
-const nuke = async () => {
+const nukeBlog = async () => {
   "use server";
   revalidatePath("/blog");
 };
 
-export const Invalidate = () => {
+export const InvalidateBlog = () => {
   return (
-    <form action={nuke}>
-      <button>Nuke cache</button>
+    <form action={nukeBlog}>
+      <button>
+        Revalidate <code>/blog</code>
+      </button>
+    </form>
+  );
+};
+
+const nukePosts = async () => {
+  "use server";
+  revalidateTag("posts", "max");
+};
+
+export const InvalidatePosts = () => {
+  return (
+    <form action={nukePosts}>
+      <button>Revalidate Posts</button>
     </form>
   );
 };
