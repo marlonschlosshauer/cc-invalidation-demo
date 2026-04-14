@@ -1,17 +1,17 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import { Button } from "./Button";
 
-const nukeBlog = async () => {
+const nukeBar = async () => {
   "use server";
-  revalidatePath("/blog");
+  revalidatePath("/bar");
 };
 
-export const InvalidateBlog = () => {
+export const InvalidateBar = () => {
   return (
-    <form action={nukeBlog}>
+    <form action={nukeBar}>
       <Button>
         <p>
-          Revalidate <code>/blog</code>
+          Revalidate <code>/bar</code>
         </p>
       </Button>
     </form>
