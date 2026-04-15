@@ -1,7 +1,7 @@
 import { cacheLife, cacheTag } from "next/cache";
 
 export const getPosts = async () => {
-  "use cache";
+  "use cache: remote";
 
   cacheTag("posts");
   cacheLife("max");
@@ -20,7 +20,7 @@ export const getPosts = async () => {
 };
 
 export const getUsers = async () => {
-  "use cache";
+  "use cache: remote";
 
   cacheTag("users");
   cacheLife("max");
