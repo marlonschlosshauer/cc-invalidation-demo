@@ -1,4 +1,8 @@
-import { InvalidateBar, InvalidatePosts } from "@/components/Invalidate";
+import {
+  InvalidateBar,
+  InvalidatePosts,
+  InvalidateUsers,
+} from "@/components/Invalidate";
 
 export default function Admin() {
   return (
@@ -6,6 +10,8 @@ export default function Admin() {
       <InvalidateBar />
       <br />
       <InvalidatePosts />
+      <br />
+      <InvalidateUsers />
       <br />
     </>
   );

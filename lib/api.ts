@@ -8,16 +8,32 @@ export const getPosts = async () => {
 
   return [
     {
-      id: crypto.randomUUID(),
       date: new Date().toISOString(),
     },
     {
-      id: crypto.randomUUID(),
       date: new Date().toISOString(),
     },
     {
-      id: crypto.randomUUID(),
       date: new Date().toISOString(),
+    },
+  ];
+};
+
+export const getUsers = async () => {
+  "use cache";
+
+  cacheTag("users");
+  cacheLife("max");
+
+  return [
+    {
+      id: crypto.randomUUID(),
+    },
+    {
+      id: crypto.randomUUID(),
+    },
+    {
+      id: crypto.randomUUID(),
     },
   ];
 };
