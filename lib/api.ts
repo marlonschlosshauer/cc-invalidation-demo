@@ -37,3 +37,22 @@ export const getUsers = async () => {
     },
   ];
 };
+
+export const getRelated = async () => {
+  "use cache: remote";
+
+  cacheTag("related");
+  cacheLife("max");
+
+  return [
+    {
+      article: new Date().toISOString(),
+    },
+    {
+      article: new Date().toISOString(),
+    },
+    {
+      article: new Date().toISOString(),
+    },
+  ];
+};

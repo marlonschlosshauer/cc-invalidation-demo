@@ -47,3 +47,18 @@ export const InvalidateUsers = () => {
     </form>
   );
 };
+
+const nukeRelated = async () => {
+  "use server";
+  revalidateTag("users", "max");
+};
+
+export const InvalidateRelated = () => {
+  return (
+    <form action={nukeRelated}>
+      <Button>
+        <p>Revalidate relatd</p>
+      </Button>
+    </form>
+  );
+};
